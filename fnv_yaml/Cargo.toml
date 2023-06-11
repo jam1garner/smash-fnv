@@ -1,0 +1,10 @@
+[package]
+name = "fnv_yaml"
+version = "0.10.0"
+authors = ["jam1garner <8260240+jam1garner@users.noreply.github.com>"]
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.3", features = ["derive"] }
+fnv_lib = { path = "../fnv_lib", features = ["serde"] }
+serde_yaml = { version = "0.9" }
