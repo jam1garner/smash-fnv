@@ -1,50 +1,41 @@
-# smash-fnv
+# fnv_lib
 
-A Rust library/CLI for working with sound_volume_fighter_num_table.fnv files in Smash Ultimate 
+A Rust library for reading and writing `sound_volume_fighter_num_table.fnv` files from Super Smash Bros. for Nintendo 3DS and Wii U and Super Smash Bros. Ultimate. Not to be confused with [Fowler–Noll–Vo](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function).
 
-(fnv not to be confused with Fowler–Noll–Vo, which was made use of in previous entries of the game)
+## fnv_yaml
 
-### Example CLI usage
+A command-line program for creating and editing `sound_volume_fighter_num_table.fnv` files using YAML. Drag and drop a `sound_volume_fighter_num_table.fnv` file onto the executable to create a YAML file. Drag and drop a properly structured YAML file onto the executable to create a `sound_volume_fighter_num_table.fnv` file. YAML files are text files, so they can be viewed and edited in any text editor.
 
-```
-smash-fnv 0.8.0
-A tool for converting between Smash Ultimate 'sound volume fighter num table' files and yaml
+Sample output from a `sound_volume_fighter_num_table.fnv` file:
 
-USAGE:
-    fnv <in-file> <out-file>
-
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
-ARGS:
-    <in-file>
-    <out-file>
-```
-
-Convert to yaml:
-
-```
-fnv sound_volume_fighter_num_table.fnv fnv.yaml
-```
-
-Convert back:
-
-```
-fnv fnv.yaml sound_volume_fighter_num_table.fnv
+```yaml
+entries:
+- fighter_num: 2
+  volume:
+    other: 0.6
+    sound_attr: 0.2
+    se_fighter_step: 0.3
+    se_fighter_landing: 0.3
+    se_collision_step: 0.3
+    se_collision_landing: 0.3
+    se_stage: 0.0
+    bgm: 0.1
+- fighter_num: 4
+  volume:
+    other: 0.0
+    sound_attr: 0.0
+    se_fighter_step: 0.0
+    se_fighter_landing: 0.0
+    se_collision_step: 0.0
+    se_collision_landing: 0.0
+    se_stage: -0.5
+    bgm: 0.0
 ```
 
+### Usage
 
-### Example Library Usage
+The latest prebuilt binary for Windows is available in [Releases](https://github.com/jam1garner/smash-fnv/releases/latest).
 
-```rust
-use fnv::FnvFile;
-
-let mut file = FnvFile::open("sound_volume_fighter_num_table.fnv")?;
-
-for entry in file.entries() {
-    println!("{}: {:?}", entry.id, entry.vols);
-}
-
-file.save("sound_volume_fighter_num_table.fnv")?;
-```
+`fnv_yaml <input> [output]`<br>
+`fnv_yaml sound_volume_fighter_num_table.fnv sound_volume_fighter_num_table.yaml`<br>
+`fnv_yaml sound_volume_fighter_num_table.yaml sound_volume_fighter_num_table.fnv`<br>
