@@ -6,5 +6,5 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "4.3", features = ["derive"] }
-fnv_lib = { path = "../fnv_lib", features = ["serde"] }
+smash-fnv = { path = "../smash-fnv", features = ["serde"] }
 serde_yaml = { version = "0.9" }

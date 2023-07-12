@@ -4,7 +4,7 @@ use std::{
 };
 
 use clap::Parser;
-use fnv_lib::FnvFile;
+use smash_fnv::FnvFile;
 
 /// Convert sound_volume_fighter_num_table.fnv files to and from YAML
 #[derive(Parser)]

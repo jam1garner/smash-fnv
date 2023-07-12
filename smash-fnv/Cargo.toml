@@ -1,5 +1,5 @@
 [package]
-name = "fnv_lib"
+name = "smash-fnv"
 version = "0.10.0"
 authors = ["jam1garner <8260240+jam1garner@users.noreply.github.com>"]
 edition = "2021"

@@ -1,6 +1,10 @@
-# fnv_lib
+# smash-fnv
 
 A Rust library for reading and writing `sound_volume_fighter_num_table.fnv` files from Super Smash Bros. for Nintendo 3DS and Wii U and Super Smash Bros. Ultimate. Not to be confused with [Fowler–Noll–Vo](https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function).
+
+```
+cargo add smash-fnv
+```
 
 ## fnv_yaml
 

@@ -1,2 +1,2 @@
 [workspace]
-members = ["fnv_lib", "fnv_yaml"]
+members = ["smash-fnv", "fnv_yaml"]
